@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <!-- box icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- header design -->
+    
+      <section class="Header">
+        <a href="#" class="Logo">Arya Rey</a>
+        
+        <i class='bx bx-menu' id="Menu-icon"></i>
+
+        <div class="Navbar">
+          <a href="#Home" class="active">HOME <span></span></a>
+          <a href="#About">ABOUT <span></span></a>
+          <a href="#Skill">SKILL <span></span></a>
+          <a href="#Portfolio">PORTFOLIO <span></span></a>
+          <a href="#Contact">CONTACT <span></span></a>
+        </div>
+        
+      </section>
+       
+
+    <!-- home section design -->
+      
+      <div class="Home" id="Home">
+        <div class="Home-content">
+          <h3>Hello, Bonjour!</h3>
+          <h1>Rey Arya</h1>
+          <h3>And I'm a <span>Frontend Web Developer</span></h3>
+          
+          <a href="#" class="Button">Download CV</a>
+          <a href="#" class="Button">Contact Me</a>
+        </div>
+
+        <div class="Home-img">
+          <img src="data/images/FaceFive.png" alt="profile">
+        </div>
+      </div>
+
+
+    <!-- about section design -->
+      <div class="About" id="About">
+        <div class="About-img">
+          <img src="data/images/FaceFour.png" alt="">
+        </div>
+
+        <div class="About-content">
+          <h2 class="Heading">About<span> Me</span></h2>
+          <h3>Frontend Web Developer</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Aspernatur pariatur dicta, recusandae ab placeat id. 
+            Accusantium reiciendis sed placeat sequi quis quia at dicta vel aperiam recusandae molestiae fuga ea quisquam nostrum, 
+            nesciunt nam! Consequatur esse eaque ex ipsam nam laudantium, fugit unde dignissimos? Nesciunt, reprehenderit.
+          </p>
+          <a href="" class="Button">Read More</a>
+        </div>
+      </div>
+
+
+    <!-- services section design -->
+    <div class="Services" id="Skill">
+      <h2 class="Heading">My<span> Skill</span></h2>
+
+      <div class="Services-container">
+        <div class="Services-box">
+          <i class='bx bxl-html5'></i>
+          <h3>HTML</h3>
+          <p>Design website dynamic and responsive <br><br>
+          </p>
+          <a href="#" class="Button">Look Project</a>
+        </div>
+
+        <div class="Services-box">
+          <i class='bx bxl-css3'></i>
+          <h3>CSS</h3>
+          <p>Website with an attractive and colorful appearance <br><br>
+          </p>
+          <a href="#" class="Button">Look Project</a>
+        </div>
+
+        <div class="Services-box">
+          <i class='bx bxl-javascript'></i>
+          <h3>JAVASCRIPT</h3>
+          <p>Adapting some features and combining to create efficiency Website
+          </p>
+          <a href="#" class="Button">Look Project</a>
+        </div>
+
+        <div class="Services-box">
+          <i class='bx bxl-php' ></i>
+          <h3>PHP</h3>
+          <p>Website and application with Database integration <br><br>
+          </p>
+          <a href="#" class="Button">Look Project</a>
+        </div>
+
+      </div>
+    </div>
+
+    
+    <!-- portfolio section design -->
+      <div class="Portfolio" id="Portfolio">
+        <h2 class="Heading">Latest <span>Project</span></h2>
+
+        <div class="Portfolio-container">
+          <div class="Portfolio-box">
+            <img src="data/images/gmb1.jpg" alt="">
+              <div class="Portfolio-layer">
+                <h4>Web Design</h4>
+                <p>
+
+                </p>
+                <a href="#">
+                  <i class='bx bx-link-external'></i>
+                </a>
+              </div>
+          </div>
+
+          <div class="Portfolio-box">
+            <img src="data/images/gmb2.jpg" alt="">
+              <div class="Portfolio-layer">
+                <h4>Apps Design</h4>
+                <p>
+                   
+                </p>
+                <a href="#">
+                  <i class='bx bx-link-external'></i>
+                </a>
+              </div>
+          </div>
+
+          <div class="Portfolio-box">
+            <img src="data/images/gmb3.jpeg" alt="">
+              <div class="Portfolio-layer">
+                <h4>Game Design</h4>
+                <p>
+                   
+                </p>
+                <a href="#">
+                  <i class='bx bx-link-external'></i>
+                </a>
+              </div>
+          </div>
+
+          
+        </div>
+        
+      </div>
+
+
+    <!-- contact section design -->
+      <div class="Contact" id="Contact">
+        <h2 class="Heading">Contact <span>Me</span></h2>
+
+        <div class="Contact-container">
+          <form action="">
+            <div class="Input-box">
+              <div class="input-field field error">
+                <input type="text" placeholder="Full Name..." id="name" class="item error" autocomplete="off">
+                <div class="error-txt">Please Type The Name Here!</div>
+              </div>
+              <div class="input-field field error">
+                <input type="text" placeholder="Email Address..." id="email" class="item error" autocomplete="off">
+                <div class="error-txt email">Email can't be blank!</div>
+              </div>
+            </div>
+            <div class="Input-box">
+              <div class="input-field field error">
+                <input type="text" placeholder="Phone Number..." id="number" class="item error" autocomplete="off">
+                <div class="error-txt">Phone Number Required!</div>
+              </div>
+              <div class="input-field field error">
+                <input type="text" placeholder="Subject..." id="subject" class="item error" autocomplete="off">
+                <div class="error-txt">Please Type The Subject Here!</div>
+              </div>
+            </div>
+
+            <div class="textarea-field field error">
+              <textarea name="" id="message" placeholder="Your Message..." cols="30" rows="10" class="item error" autocomplete="off">   
+              </textarea>
+              <div class="error-txt">Please Type The Message</div>
+            </div>
+
+            <button class="Button" type="submit">SEND MESSAGE</button>
+          </form>
+        </div>
+      </div>
+
+
+    <!-- footer design -->
+      <div class="Footer">
+        <div class="Footer-text">
+          <p>Copyright &copy; 2023 Rey Arya | All Right Reserved.</p>
+        </div>
+
+        <div class="Footer-iconTop">
+          <a href="#Home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+      </div>
+ 
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Type -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <!-- typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- custom js -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
