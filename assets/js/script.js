@@ -1,41 +1,39 @@
-/*==================== toggle icon navbar ====================*/
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.Navbar');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
 
 /*==================== scroll sections active link ====================*/
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('.Navbar a');
+let list = document.querySelectorAll('.Navbar a');
+function active(){
+    list.forEach((i) =>
+    i.classList.remove('active'));
+    this.classList.add('active');
+}
 
-    window.onscroll = () => {
-        sections.forEach(sec => {
-            let top = window.scrollY;
-            let offset = sec.offsetTop - 150;
-            let height = sec.offsetHeight;
-            let id = sec.getAttribute('id');
-            
-            if(top >= offset && top < offset + height) {
-                navLinks.forEach(links => {
-                    links.classList.remove('active');
-                    document.querySelector('.Navbar a[href*=' + id + ']').classList.add('active');
-
-                });
-            };
-        });
+list.forEach((i) =>
+i.addEventListener('click',active));
 
  
-/*==================== remove toggle icon and navbar when click navbar link (scroll) ====================*/
-        menuIcon.classList.remove('bx-x');
-        navbar.classList.remove('active');        
+/*==================== active navbar, remove toggle icon and navbar when click navbar link (scroll) ====================*/
+ let menuIcon = document.querySelector('#Menu-icon');
+ let Navbar = document.querySelector('.Navbar');
+ 
+ menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    Navbar.classList.toggle('active');
 
-    };
+ }
+Navbar.onclick = () => {
+    menuIcon.classList.remove('bx-x');
+    Navbar.classList.remove('active');
+}
+
+
+ 
 
 
 /*==================== scroll reveal ====================*/
+
+/*==================== sticky header ====================*/
+ 
 
 /*==================== type contact ====================*/
 const form = document.querySelector("form");
