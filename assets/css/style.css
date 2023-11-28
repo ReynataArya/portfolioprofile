@@ -31,7 +31,6 @@ body{
 }
 
 
-
 .Header{
     position: fixed;
     top: 0;
@@ -65,13 +64,10 @@ body{
 .Navbar a:hover,
 .Navbar a.active{
     color: var(--main-color);   
-    border-right: 2px solid var(--main-color);
-    border-left: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
     border-radius: 15px;
 }
-
  
-
 #Menu-icon{
      font-size: 3.6rem;
      color: var(--text-color);
@@ -134,6 +130,7 @@ span{
 .Button:hover{
     box-shadow: none;
     color: var(--text-color);
+    
 }
 
 /*---- End Home*/
@@ -176,22 +173,22 @@ span{
 
 /*---- End About*/
 
-/*Services Start ----*/
+/*Skill Start ----*/
 
-.Services h2{
-    padding: 6rem 2%;
+.Skill h2{
+    padding: 6.5rem 2%;
 }
 
-.Services-container{
+.Skill-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 0 3% 4%;
+    padding: 0 3% 5%;
 }
 
-.Services-container .Services-box{
+.Skill-container .Skill-box{
     flex: 1 1 30rem;
     background: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
@@ -201,27 +198,27 @@ span{
     transition: .5s ease;
 }
 
-.Services-container .Services-box:hover{
+.Skill-container .Skill-box:hover{
     border-color: var(--main-color);
     transform: scale(1.05);
 }
 
-.Services-box i{
+.Skill-box i{
     font-size: 7rem;
     color: var(--main-color);
 }
 
-.Services-box h3{
+.Skill-box h3{
     font-size: 2.6rem;
 }
 
-.Services-box p{
+.Skill-box p{
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
     text-align: justify;
 }
 
-/*---- End Services*/
+/*---- End Skill*/
 
 /*Portfolio Start ----*/
 
@@ -432,12 +429,8 @@ form .textarea-field .error-txt{
     .Header {
         font-size: 2rem 3%;
     }
-
-    section {
-        padding: 10rem 3% 2rem;
-    }
-
-    .Services{
+ 
+    .Skill{
         padding-bottom: 7rem;
     }
 
@@ -462,23 +455,53 @@ form .textarea-field .error-txt{
     .Navbar{
         position: absolute;
         top: 100%;
-        left: 0;
+        left: -100%;
         width: 100%;
-        padding: 1rem 3%;
-        background: var(--bg-color);
-        border-top: .1rem solid rgba(0, 0, 0, .2);
+        padding: 1rem 4%;
+        background: var(--main-color);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        display: none;
-    }
+        transition: .25s ease;
+        transition-delay: .25s;
+       z-index: 1;
+    } 
 
     .Navbar.active{
-        display: block;
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .Navbar .active-Navbar{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 100%;
+        background: var(--second-bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0;
+    }
+
+    .Navbar.active .active-Navbar{
+        left: 0;
+        transition-delay: .25s;
     }
 
     .Navbar a{
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+        
+    }
+
+    .Navbar.active a{
+        transform: translateX(0);
+        transition-delay: .25s;
+        border: none;
     }
 
     .Home{
@@ -507,7 +530,7 @@ form .textarea-field .error-txt{
         margin-top: 4rem;
     }
 
-    .Services h2{
+    .Skill h2{
         margin-bottom: 3rem;
     }
 
@@ -564,3 +587,4 @@ form .textarea-field .error-txt{
 
 
 /*---- End Responsive*/
+
