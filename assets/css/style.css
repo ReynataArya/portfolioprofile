@@ -5,6 +5,7 @@
     --second-bg-color: #323946;
     --text-color: #fff;
     --main-color: #fa004b;
+    --main-colorTwo: #1911f1;
     --contact-color: #7a7a7a;
     --error-color: #f8ca0a;
 }
@@ -46,10 +47,15 @@ body{
 
 
 .Logo{
+    position: relative;
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
+}
+
+.Navbar{
+    position: relative;
 }
 
 .Navbar a{
@@ -69,6 +75,7 @@ body{
 }
  
 #Menu-icon{
+    position: relative;
      font-size: 3.6rem;
      color: var(--text-color);
      display: none;
@@ -86,13 +93,29 @@ body{
 
 .Home-img img{
     width: 35vw;
-   
+   transition: .3s;
+}
+
+.Home-img img:hover{
+    background: var(--bg-color);
+    opacity: .5;
 }
 
 .Home-content h3{
     font-size: 3.2rem;
     font-weight: 700;
+    
 }
+
+.Home-content h1{
+    position: relative;
+    display: inline-block;
+}
+
+.Home-content span{
+    font-size: 2.6rem;
+}
+
 
 .Home-content h3:nth-of-type(2){
     margin-bottom: 2rem;
@@ -100,6 +123,33 @@ body{
 
 span{
     color: var(--main-color);
+}
+
+.Home-content span{
+    
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: .9px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;   
+    background-position: 0 0;
+    animation: homeText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+.Home-content span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+
 }
 
 .Home-content h1{
@@ -132,6 +182,7 @@ span{
     color: var(--text-color);
     
 }
+ 
 
 /*---- End Home*/
 
@@ -141,14 +192,43 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 2rem;
     background: var(--second-bg-color);
-    padding: 5rem 5%;
+    padding: 7rem 5%;
+}
+
+.About-img{
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .About-img img{
-    width: 35vw;
+    width: 90%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-colorTwo);
 }
+
+.About-img .Circle-spin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--second-bg-color);
+    border-bottom: .2rem solid var(--second-bg-color);
+    border-left: .2rem solid var(--main-colorTwo);
+    border-right: .2rem solid var(--main-colorTwo);
+    animation: aboutSpinn 8s linear infinite;
+}
+
 
 .Heading{
     text-align: center;
@@ -224,7 +304,7 @@ span{
 
 .Portfolio{
     background: var(--second-bg-color);
-    padding: 5% ;
+    padding: 5%;
 }
 
 .Portfolio h2{
@@ -416,6 +496,83 @@ form .textarea-field .error-txt{
 
 /*============================================*/
 
+/*Start Animation and Reload ----*/
+
+.animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--main-color);
+    z-index: 98;
+}
+
+.Logo .animate,
+.Navbar .animate,
+#Menu-icon .animate,
+.Home .animate{
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+}
+
+/*---- End Animation and Reload*/
+
+
+/*Start Keyframe ----*/
+
+@keyframes showRight{
+    100%{
+        width: 0;
+    }
+}
+
+@keyframes aboutSpinn{
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+@keyframes homeText{
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
+
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText{
+    0%,
+    10%,
+    100% {
+       
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        
+       width: 100%;
+       opacity: 1;
+    }
+
+    75%,
+    81% {
+         
+        opacity: 0;
+    }
+}
+
+
+/*---- End Keyframe*/
+
 
 /*Start Responsive ----*/
 
@@ -462,7 +619,7 @@ form .textarea-field .error-txt{
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         transition: .25s ease;
         transition-delay: .25s;
-       z-index: 1;
+        z-index: 1;
     } 
 
     .Navbar.active{
@@ -505,7 +662,9 @@ form .textarea-field .error-txt{
     }
 
     .Home{
+        text-align: center;
         flex-direction: column;
+       
     }
 
     .Home-content h3 {
@@ -521,8 +680,26 @@ form .textarea-field .error-txt{
         margin-top: 4rem;
     }
 
+
     .About{
         flex-direction: column-reverse;
+    }
+
+    .About-img{
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .About-img img{
+        width: 90%;
+  
+
+    .About-content .Heading{
+        text-align: center;
+    }
+
+    .About-content h3{
+        text-align: center;
     }
 
     .About img{
@@ -532,6 +709,15 @@ form .textarea-field .error-txt{
 
     .Skill h2{
         margin-bottom: 3rem;
+    }
+
+    .Portfolio{
+       padding: 10% 5%;
+
+    }
+
+    .About{
+        padding: 10% 5%;
     }
 
     .Portfolio h2{
@@ -564,6 +750,48 @@ form .textarea-field .error-txt{
         width: 90vw;
     }
 
+    .Home-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .Home-content span{
+        font-size: 1.6rem;
+    }
+
+    .Home-content h1{
+        font-size: 5rem;
+    }
+
+    .Portfolio{
+        padding: 16% 5%;
+ 
+     }
+ 
+     .About{
+         padding: 16% 5%;
+     }
+
+     .About-img{
+        margin-top: 2rem;
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .About-img img{
+        width: 90%;
+     
+     .Skill{
+        padding: 1rem;
+     }
+
+     .Skill h2{
+        margin-bottom: -20px;
+     }
+
+     .Contact{
+        padding: 3% 0 70%;
+     }
+
     .About-img img{
         width: 90vw;
     }
@@ -583,8 +811,13 @@ form .textarea-field .error-txt{
 
 }
 
+@media (max-width: 350px) {
 
+    .Button{
+        padding: 0.5rem 1rem;
+        font-size: 1.5rem;
+    }
+}
 
 
 /*---- End Responsive*/
-
